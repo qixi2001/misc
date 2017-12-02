@@ -213,3 +213,5 @@ dmesg|grep -C 10 "spi: '"
 13, imx#:vi /etc/inittab
 14, ttyAM0::respawn:/root/getty -L ttyAM0 115200 vt100 /root/login # GENERIC_SERIAL
 15, reboot
+
+this is a test!
