@@ -1,0 +1,215 @@
+1,gcc hello.c -o hello
+no such file or direcory?
+sudo apt-get install libc6-dev
+
+2, use the default program to open file
+xdg-open file
+
+3, get baiduyun file
+wget -c --refer -O
+
+4, install chinese input method
+sudo apt remove fcitx-module-kimpanel
+
+5, check USB to serial device
+a, ls -l /dev/ttyU*
+b, dmesg | grep USB
+
+6, the minicom can not work
+refer to z-tek USB-serial 
+
+7, get content from iso file
+mount -o loop /mnt/*/1.iso /mnt/cdrom
+
+8, change environment variable
+export PATH=$PATH:/dir
+
+9, open file that created from windows
+a, iconv -f gbk -t utf-8 file>file.x
+b, 
+
+10, check the reboot status
+last reboot
+
+11, ssh get file from server
+scp big.c long@172.16.0.148:/home/long/dir/
+
+1,shell怎么写?
+开行#!/bin/bash
+完成后记得修改文件属性chmod 777 file
+
+2,如何使用条件判断
+
+if [ $1 -eq 0 ] || [ $# -eq 0 ]; then
+echo "no parameter or first parameter equal 0"
+elif [$1 -eq 1 ]; then
+echo "fist parameter equal 1"
+fi
+
+要注意在'['后面和']'前面都必须要有空格
+
+3,如何引用命令行参数
+
+$0	相当于C语言main函数的argv[0]
+$1、$2...	这些称为位置参数（Positional Parameter），相当于C语言main函数的argv[1]、argv[2]...
+$#	相当于C语言main函数的argc - 1，注意这里的#后面不表示注释
+$@	表示参数列表"$1" "$2" ...，例如可以用在for循环中的in后面。
+$?	上一条命令的Exit Status
+$$	当前Shell的进程号
+
+4，修改变量的值
+i=($2+0x80)
+i=$[$i<<16]
+nudbg-write 0x40000344 $i
+注意i=1 而不是 i = 1
+或者用如下代替
+let "i<<=16"
+
+5，全局替换
+:1,$s/str/str1/g
+:%s/str/str1/g
+
+6，将输出放进变量中，以便下一步处理
+var=`ls -l`
+echo $var
+#`为ESC下方按键
+
+7,
+string=thisisastring
+'$string', shell不做处理
+"$string", shell输出thisisastring
+`` 与$()作用相同，主要用作命令
+$string与${string}作用相同
+$(())，求解数学表达式
+
+8, cat > 1.txt<<EOF
+
+9,/dev/null黑洞，等价于一个只写文件，并且所有写入它的内容都会永远丢失，而尝试从它那儿读取内容则什么也读不到。有些时候，我并不想看道任何输出，我只想看到这条命令运行是不是正常，那么我们可以同时禁止标准输出和标准错误的输出:    
+       cat $filename 2>/dev/null >/dev/null
+所以：
+* 如果"$filename"不存在，将不会有任何错误信息提示，
+* 如果"$filename"存在, 文件的内容不会打印到标准输出。
+* 因此, 上面的代码根本不会输出任何信息，当只想测试命令的退出码而不想有任何输出时非常有用。下一步，我们使用 echo $? 查看上条命令的退出码：0为命令正常执行，1-255为有出错。
+
+当然，使用   cat $filename &>/dev/null   也可以达到  cat $filename 2>/dev/null >/dev/null 一样的效果。\
+
+有时候，我们需要删除一些文件的内容而不删除文件本身： cat /dev/null > /var/log/messages
+
+
+10,字符串截取
+a=0x010200
+a=${a:0:4}
+#截取左边第一个字符开始4个字符
+a=${a%2*}
+
+11，目录中查找字符串
+grep __raw_writel -R drivers
+
+12，目录中查找文件
+find arch/arm -name *.c
+
+13，格式化代码
+ggVG=
+
+14，察看字符串是否包含字符串
+a="this is test string"
+res=`echo $a | grep str`
+if [ $res != "" ]
+then
+echo "yes"
+else 
+echo "no"
+fi
+
+if [ $res == *"str"* ] 
+then 
+echo "yes"
+else 
+echo "no"
+fi
+if there is loop nesting, should [[]]
+
+15, compile kernel module
+a, create a folder in kernel directory
+b, create a Makefile, which the only content is "obj-m:=xxx.o"
+c, create the  moudle source file
+d, cd the module folder
+e, type "make ARCH=arm CROSS_COMPILE=arm-xilinx-linux-gnueabi- -C ~/euht_bigPA/kernel_xilinx_v4.4/ M=`pwd` modules", which ~/../kernel_xilinx_v4.4 is linux kernel directory
+
+16, how to use cscope
+1, sudo apt-get install cscope
+2, goto the desired directory
+3, cscope -Rbq
+4, vim yourfile
+5, type :cscope add cscope.out 
+6, now can use, :cs find g(definition)/c(functions which invoke this function)/d(functions which this function has)
+
+17, cp or copy
+a, copy file into a folder
+cp /test1/test01 /test2
+b, copy a folder into a folder
+cp -r /TEST/test1 /TEST/test2
+c, copy all files in a folder to a folder
+cp -r /TEST/test1/* /TEST/test2
+
+18, git commit project
+1, cd project
+2, git init
+3, git add *
+4, git commit -m "description"
+5, git remot add origin "https://yourrep.git"
+6, git push -u origin master
+
+19, addons
+sudo apt-get install vim-addon-manager
+vim-addons status
+sudo apt-get install vim-scripts
+sudo apt-get install vim-doc
+mkdir ~/.vim
+mkdir ~/.vim/doc
+mkdir ~/.vim/plugin
+vim-addons install 
+
+20, project
+vim-addons install project
+1, enter the directory
+2, vim +Project
+3, \C (no enter)
+4, type the current directory
+5, . , *c *h
+6, :wq
+7, next time, vim +Project
+endif
+
+21, search string from files
+find . -name *.c | xargs grep led-rim
+
+22, ssh scp, encouter read-only file system
+mount -o remount rw /
+
+23, PC use android IP, and board use line but should change IP to 172.16.0.148,172.16.0.255,255.255.255.0
+pc ping board OK, pc ping www.163.com OK
+board ping 172.16.0.255 nok
+board ping www.163.com ip Nok
+board ping pc nok
+
+
+dmesg|grep -C 10 "spi: '"
+
+1, how to login without user and password
+1, download busybox
+2, cd busybox
+3, make ARCH=arm CROSS_COMPILE=arm-fsl-linux-gnueabi- defconfig
+4, vim loginutils/getty.c
+5, comment get_logname funtion and make 
+	BB_EXECLP(options.login, options.login, "-f", "root", NULL);
+6, make ARCH=arm CROSS_COMPILE=arm-fsl-linux-gnueabi- -j
+7, make ARCH=arm CROSS_COMPILE=arm-fsl-linux-gnueabi- install -j
+8, cp _install/bin/busybox /nfsroot
+9, imx#:mount -t nfs 172.16.0.148:/nfsroot /mnt -o nolock
+10, imx#:mv /mnt/busybox /root/
+11, imx#:ln -s busybox login
+12, imx#:ln -s busybox getty
+13, imx#:vi /etc/inittab
+14, ttyAM0::respawn:/root/getty -L ttyAM0 115200 vt100 /root/login # GENERIC_SERIAL
+15, reboot
