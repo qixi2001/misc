@@ -215,3 +215,9 @@ dmesg|grep -C 10 "spi: '"
 15, reboot
 
 this is a test!
+
+Mon  4 Dec 19:32:13 CST 2017
+1, always use source + path
+2, add to environment is easy, but not vice versa
+3, gcc command not found, try full path in Makefile
+
