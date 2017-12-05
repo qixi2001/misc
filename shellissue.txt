@@ -221,3 +221,36 @@ Mon  4 Dec 19:32:13 CST 2017
 2, add to environment is easy, but not vice versa
 3, gcc command not found, try full path in Makefile
 
+udo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install libncurses5:i386 libstdc++6:i386 zlib1g:i386
+
+
+  HOSTCC  scripts/basic/fixdep
+    HOSTCC  scripts/basic/docproc
+	  HOSTCC  scripts/basic/hash
+	    HOSTCC  scripts/kconfig/conf.o
+		scripts/kconfig/conf.c: In function ‘conf_choice’:
+		scripts/kconfig/conf.c:311:4: warning: ignoring return value of ‘fgets’, declared with attribute warn_unused_result [-Wunused-result]
+		    fgets(line, 128, stdin);
+			    ^
+				scripts/kconfig/conf.c: In function ‘conf_askvalue’:
+				scripts/kconfig/conf.c:105:3: warning: ignoring return value of ‘fgets’, declared with attribute warn_unused_result [-Wunused-result]
+				   fgets(line, 128, stdin);
+				      ^
+					    HOSTCC  scripts/kconfig/kxgettext.o
+						  HOSTCC  scripts/kconfig/zconf.tab.o
+						    HOSTLD  scripts/kconfig/conf
+							scripts/kconfig/conf -s arch/arm/Kconfig
+							arch/arm/mach-mx28/Kconfig:18:warning: defaults for choice values not supported
+							drivers/net/wireless/bcmdhd/Kconfig:45:warning: defaults for choice values not supported
+
+							*** Error during update of the kernel configuration.
+
+							/home/long/imx/linux-2.6.35.3/scripts/kconfig/Makefile:33: recipe for target 'silentoldconfig' failed
+							make[2]: *** [silentoldconfig] Error 1
+							/home/long/imx/linux-2.6.35.3/Makefile:465: recipe for target 'silentoldconfig' failed
+							make[1]: *** [silentoldconfig] Error 2
+							make: *** No rule to make target 'include/config/auto.conf', needed by 'include/config/kernel.release'.  Stop.
+>>>>>>> 7131a2ab2d78e233eedf50367afa9912287809e2
+
