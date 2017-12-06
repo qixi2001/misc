@@ -262,3 +262,39 @@ install to the parent like /dev/sdb, not /dev/sdbx200 M to /boot
 check the file modification history.
 git blame file
 git diff file
+
+
+
+git init
+git add .
+git commit -m "comment for this this commit"
+git reset --hard HEAD^ #back to commited 
+git reset --hard 3628164
+git log
+git log --pretty=oneline
+git reflog
+git checkout -- file #back to last state
+git reset HEAD file #back to last state before staged 
+
+rm file
+git rm file # delete file
+git commit -m "comment for this delete operation"
+git checkout -- file # delete the wrong file
+
+git remote add origin git@github.com:qixi2001/misc.git
+git push -u origin master -f #first push local to remote
+git push origin master
+
+git branch branchname # create branch
+git checkout branchname
+git branch # check all the branches
+git checkout master # switch 
+git merge branchname # merge branch name to current branch
+git branch -d branchname # delete branch 
+git branch
+
+git log --graph # view the graph of merge status
+
+git merge --no-ff -m "merge branchname" branchname
+
+git pull
