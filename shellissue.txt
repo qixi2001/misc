@@ -254,3 +254,11 @@ sudo apt-get install libncurses5:i386 libstdc++6:i386 zlib1g:i386
 							make: *** No rule to make target 'include/config/auto.conf', needed by 'include/config/kernel.release'.  Stop.
 >>>>>>> 7131a2ab2d78e233eedf50367afa9912287809e2
 
+1, install system
+swap primary, all the others logic, size to your physical memory
+200 M to /boot
+install to the parent like /dev/sdb, not /dev/sdbx200 M to /boot
+
+check the file modification history.
+git blame file
+git diff file
