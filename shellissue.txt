@@ -84,7 +84,7 @@ $(())，求解数学表达式
 
 8, cat > 1.txt<<EOF
 
-9,/dev/null黑洞，等价于一个只写文件，并且所有写入它的内容都会永远丢失，而尝试从它那儿读取内容则什么也读不到。有些时候，我并不想看道任何输出，我只想看到这条命令运行是不是正常，那么我们可以同时禁止标准输出和标准错误的输出:    
+9,/dev/nulll黑洞，等价于一个只写文件，并且所有写入它的内容都会永远丢失，而尝试从它那儿读取内容则什么也读不到。有些时候，我并不想看道任何输出，我只想看到这条命令运行是不是正常，那么我们可以同时禁止标准输出和标准错误的输出:    
        cat $filename 2>/dev/null >/dev/null
 所以：
 * 如果"$filename"不存在，将不会有任何错误信息提示，
@@ -143,6 +143,7 @@ e, type "make ARCH=arm CROSS_COMPILE=arm-xilinx-linux-gnueabi- -C ~/euht_bigPA/k
 4, vim yourfile
 5, type :cscope add cscope.out 
 6, now can use, :cs find g(definition)/c(functions which invoke this function)/d(functions which this function has)
+alias mktag='find `pwd` -name "*.[ch]" -o -name "*.cpp" > cscope.files;ctags -R --c++-kinds=+p --fields=+iaS --extra=+q;cscope -bkq -i cscope.files'  
 
 17, cp or copy
 a, copy file into a folder
@@ -151,14 +152,6 @@ b, copy a folder into a folder
 cp -r /TEST/test1 /TEST/test2
 c, copy all files in a folder to a folder
 cp -r /TEST/test1/* /TEST/test2
-
-18, git commit project
-1, cd project
-2, git init
-3, git add *
-4, git commit -m "description"
-5, git remot add origin "https://yourrep.git"
-6, git push -u origin master
 
 19, addons
 sudo apt-get install vim-addon-manager
@@ -170,6 +163,7 @@ mkdir ~/.vim/doc
 mkdir ~/.vim/plugin
 vim-addons install 
 
+#Due to delete by Dec. 10
 20, project
 vim-addons install project
 1, enter the directory
@@ -187,6 +181,7 @@ find . -name *.c | xargs grep led-rim
 22, ssh scp, encouter read-only file system
 mount -o remount rw /
 
+#Due to delete Dec. 10
 23, PC use android IP, and board use line but should change IP to 172.16.0.148,172.16.0.255,255.255.255.0
 pc ping board OK, pc ping www.163.com OK
 board ping 172.16.0.255 nok
@@ -214,8 +209,6 @@ dmesg|grep -C 10 "spi: '"
 14, ttyAM0::respawn:/root/getty -L ttyAM0 115200 vt100 /root/login # GENERIC_SERIAL
 15, reboot
 
-this is a test!
-
 Mon  4 Dec 19:32:13 CST 2017
 1, always use source + path
 2, add to environment is easy, but not vice versa
@@ -226,34 +219,6 @@ sudo apt-get update
 sudo apt-get install libncurses5:i386 libstdc++6:i386 zlib1g:i386
 
 
-  HOSTCC  scripts/basic/fixdep
-    HOSTCC  scripts/basic/docproc
-	  HOSTCC  scripts/basic/hash
-	    HOSTCC  scripts/kconfig/conf.o
-		scripts/kconfig/conf.c: In function ‘conf_choice’:
-		scripts/kconfig/conf.c:311:4: warning: ignoring return value of ‘fgets’, declared with attribute warn_unused_result [-Wunused-result]
-		    fgets(line, 128, stdin);
-			    ^
-				scripts/kconfig/conf.c: In function ‘conf_askvalue’:
-				scripts/kconfig/conf.c:105:3: warning: ignoring return value of ‘fgets’, declared with attribute warn_unused_result [-Wunused-result]
-				   fgets(line, 128, stdin);
-				      ^
-					    HOSTCC  scripts/kconfig/kxgettext.o
-						  HOSTCC  scripts/kconfig/zconf.tab.o
-						    HOSTLD  scripts/kconfig/conf
-							scripts/kconfig/conf -s arch/arm/Kconfig
-							arch/arm/mach-mx28/Kconfig:18:warning: defaults for choice values not supported
-							drivers/net/wireless/bcmdhd/Kconfig:45:warning: defaults for choice values not supported
-
-							*** Error during update of the kernel configuration.
-
-							/home/long/imx/linux-2.6.35.3/scripts/kconfig/Makefile:33: recipe for target 'silentoldconfig' failed
-							make[2]: *** [silentoldconfig] Error 1
-							/home/long/imx/linux-2.6.35.3/Makefile:465: recipe for target 'silentoldconfig' failed
-							make[1]: *** [silentoldconfig] Error 2
-							make: *** No rule to make target 'include/config/auto.conf', needed by 'include/config/kernel.release'.  Stop.
->>>>>>> 7131a2ab2d78e233eedf50367afa9912287809e2
-
 1, install system
 swap primary, all the others logic, size to your physical memory
 200 M to /boot
@@ -263,6 +228,14 @@ check the file modification history.
 git blame file
 git diff file
 
+
+18, git commit project
+1, cd project
+2, git init
+3, git add *
+4, git commit -m "description"
+5, git remot add origin git@github.com:qixi2001/misc.git
+6, git push -u origin master
 
 
 git init
