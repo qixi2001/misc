@@ -124,7 +124,10 @@ if [ -x /usr/bin/mint-fortune ]; then
      /usr/bin/mint-fortune
 fi
 
+export PATH=$PATH:/home/ctools/gcc-4.4.4-glibc-2.11.1-multilib-1.0/arm-fsl-linux-gnueabi/bin
+export HISTTIMEFORMAT="%y-%m-%d %H:%M:%S  "
 
+alias ss='sudo apt install '
 # add for cscope
 alias mkcscopefile='find `pwd` -name "*.[ch]" -o -name "*.cpp" > cscope.files'  
 alias mktag='find `pwd` -name "*.[ch]" -o -name "*.cpp" > cscope.files;ctags -R --c++-kinds=+p --fields=+iaS --extra=+q;cscope -bkq -i cscope.files'  
