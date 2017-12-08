@@ -1,3 +1,13 @@
+
+let mapleader = "\<Space>"
+
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>qa :qa<CR>
+
+nnoremap <Space> G
+
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -213,12 +223,3 @@ imap <F9> <ESC>:cn<CR>
 if has("autocmd")
 	    autocmd! bufwritepost vimrc source $MYVIMRC
 endif
-
-
-let mapleader = "\<Space>"
-
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>qa :qa<CR>
-
-nnoremap <Space> G
