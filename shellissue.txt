@@ -163,30 +163,12 @@ mkdir ~/.vim/doc
 mkdir ~/.vim/plugin
 vim-addons install 
 
-#Due to delete by Dec. 10
-20, project
-vim-addons install project
-1, enter the directory
-2, vim +Project
-3, \C (no enter)
-4, type the current directory
-5, . , *c *h
-6, :wq
-7, next time, vim +Project
-endif
 
 21, search string from files
 find . -name *.c | xargs grep led-rim
 
 22, ssh scp, encouter read-only file system
 mount -o remount rw /
-
-#Due to delete Dec. 10
-23, PC use android IP, and board use line but should change IP to 172.16.0.148,172.16.0.255,255.255.255.0
-pc ping board OK, pc ping www.163.com OK
-board ping 172.16.0.255 nok
-board ping www.163.com ip Nok
-board ping pc nok
 
 
 dmesg|grep -C 10 "spi: '"
