@@ -253,3 +253,7 @@ git log --graph # view the graph of merge status
 git merge --no-ff -m "merge branchname" branchname
 
 git pull
+
+bash shell loop while seq
+while true;do cmd;done;
+for i in `seq 1 1 10`;do cmd;done
