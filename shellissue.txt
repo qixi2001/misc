@@ -257,3 +257,6 @@ git pull
 bash shell loop while seq
 while true;do cmd;done;
 for i in `seq 1 1 10`;do cmd;done
+
+check the file list under git
+git ls-files
