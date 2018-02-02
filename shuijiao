@@ -85,12 +85,13 @@ def text2voice(text):
     os.system('mplayer "%s"' % url)
 def main():
     # 获取需要转换语音的文字
-    text = get_weather()
+    # text = get_weather()
+    text = "李响，睡觉了.李响，睡觉了.李响，睡觉了.李响，睡觉了.李响，睡觉了."
     print(text)
     # 获取音乐文件绝对地址
-    # mp3path2 = os.path.join(os.path.dirname(__file__), '2.mp3')
+    mp3path2 = os.path.join(os.path.dirname(__file__), '2.mp3')
     # 先播放一首音乐做闹钟
-    # os.system('mplayer %s' % mp3path2)
+    os.system('mplayer %s' % mp3path2)
     # 播报语音天气
     text2voice(text)
 if __name__ == '__main__':
