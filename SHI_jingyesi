@@ -21,7 +21,7 @@ def text2voice(text):
     os.system('mplayer "%s"' % url)
 def main():
     # 获取需要转换语音的文字
-    text = "静夜思，李白。床前明月光，疑是地上霜。举头望明月，低头思故乡。"
+    text = "静夜思，作者：李白。床前明月光，疑是地上霜。举头望明月，低头思故乡。"
     print(text)
     # 播报语音天气
     text2voice(text)

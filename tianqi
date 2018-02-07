@@ -74,8 +74,26 @@ def get_weather():
     info = info.replace('，', ',')
     # 获取今天的日期
     today = datetime.now().date().strftime('%Y年%m月%d日')
+    today = datetime.now().date().strftime('%Y年%m月%d日')
+
+    hour=datetime.now().time().hour
+
+    if 6 <= hour <= 9:
+        zaoshanghao="早上好"
+    elif 9 < hour <= 12:
+        zaoshanghao="上午好"
+    elif 12 < hour <= 14:
+        zaoshanghao="中午好"
+    elif 14 < hour <= 18:
+        zaoshanghao="下午好"
+    elif 18 < hour <= 23:
+        zaoshanghao="晚上好"
+    else:
+        zaoshanghao="凌晨好"
+
+    xianzaishijian="现在时刻:" + str(hour) + "点" + str(datetime.now().time().minute) + "分。"
     # 将获取的信息拼接成一句话
-    text = '早上好！今天是%s,天气%s,温度%s摄氏度,%s,%s,%s,%s' % \
+    text = xianzaishijian + zaoshanghao + '！今天是%s,天气:%s,温度:%s摄氏度,%s,%s,%s,%s' % \
            (today, weather, temp, sd, wind, aqi, info)
     return text
 def text2voice(text):
