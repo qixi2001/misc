@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+
+# -*- coding: utf-8 -*-
+# @Time     : 2017/1/15 15:16
+# @Author   : woodenrobot
+import os
+import re
+import time
+import requests
+from datetime import datetime, timedelta
+from bs4 import BeautifulSoup
+headers = {\
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit'
+                      '/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safar'
+                      'i/537.36',
+    }
+def text2voice(text):
+    url = 'http://tts.baidu.com/text2audio?idx=1&tex={0}&cuid=baidu_speech_' \
+          'demo&cod=2&lan=zh&ctp=1&pdt=1&spd=3&per=0&vol=5&pit=5'.format(text)
+    # 直接播放语音
+    os.system('mplayer "%s"' % url)
+def main():
+    # 获取需要转换语音的文字
+    text = "《登鹳雀楼》。\
+作者: 王之涣！！！！\
+白日依山尽，黄河入海流。\
+欲穷千里目，更上一层楼。"
+    print(text)
+    # 播报语音天气
+    text2voice(text)
+if __name__ == '__main__':
+    main()
