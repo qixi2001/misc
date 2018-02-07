@@ -1,5 +1,16 @@
 #!/bin/bash
 
-cd /home/pi/Downloads
-./ngrok tcp 192.168.1.10:22
-cd ..
+cd /home/long/Downloads
+#./ngrok tcp 192.168.1.10:22
+#cd ..
+
+#./ngrok
+
+var=`ifconfig enp3s0|grep "inet addr"`
+var=${var#*addr:}
+var=${var%B*}
+var=${var// /}
+var="./ngrok tcp "$var":22"
+pwd
+echo $var
+$var
