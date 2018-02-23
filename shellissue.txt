@@ -260,3 +260,11 @@ for i in `seq 1 1 10`;do cmd;done
 
 check the file list under git
 git ls-files
+
+sudo unzip a.zop /home/long/baidu_aip
+while get filename not matched
+try unzip a.zip -d /home/long/baidu_aip
+
+ImportError:No module name SetupTools
+
+arecord -t wav -f S16_LE -d 5 -r 16000 -D "plughw:1,0" sh.wav

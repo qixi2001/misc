@@ -10,7 +10,7 @@ def get_file_content(filePath):
     with open(filePath, 'rb') as fp:
         return fp.read()
 
-result=client.asr(get_file_content('16k.pcm'), 'pcm', 16000, {
+result=client.asr(get_file_content('sh.wav'), 'wav', 16000, {
     'lan': 'zh',
 })		
 
