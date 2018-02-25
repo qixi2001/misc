@@ -268,3 +268,10 @@ try unzip a.zip -d /home/long/baidu_aip
 ImportError:No module name SetupTools
 
 arecord -t wav -f S16_LE -d 5 -r 16000 -D "plughw:1,0" sh.wav
+
+list all lan machines 
+nmap -sP 172.16.0.0-255
+
+1,use wired not WIFI
+sudo vim /etc/network/interfaces
+comment the last 4 lines

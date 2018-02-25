@@ -14,4 +14,4 @@ result=client.asr(get_file_content('sh.wav'), 'wav', 16000, {
     'lan': 'zh',
 })		
 
-print(result['result'][0])
+return(result['result'][0])
