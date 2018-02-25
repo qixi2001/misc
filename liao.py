@@ -2,10 +2,8 @@
 import urllib
 import json
 import os
-import sys
-
-
 from aip import AipSpeech
+import sys
 
 APP_ID = '10818524'
 API_KEY = 'itP1il3o3QFXLQCMSgPcZl2R'
@@ -40,14 +38,10 @@ if __name__ == '__main__':
         result=client.asr(get_file_content('sh.wav'), 'wav', 16000, { 'lan': 'zh', })		
         if result['err_no'] != 0:
             continue
-        print(result)
-#        info = result['result'][0]
-#        info=info.encode('utf-8')
-#        print(info)
-#        if len(info) == 0:
-#            continue
-#        request = api + info
-#        response = getHtml(request)
-#        dic_json = json.loads(response)
-#        print 'robot:'.decode('utf-8') + dic_json['text']
-#        text2voice(dic_json['text'])
+        print(result['result'][0])
+        info = result['result'][0].encode('utf-8')
+        request = api + info
+        response = getHtml(request)
+        dic_json = json.loads(response)
+        print 'robot:'.decode('utf-8') + dic_json['text']
+        text2voice(dic_json['text'])

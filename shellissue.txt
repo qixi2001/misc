@@ -261,7 +261,7 @@ for i in `seq 1 1 10`;do cmd;done
 check the file list under git
 git ls-files
 
-sudo unzip a.zop /home/long/baidu_aip
+sudo unzip a.zip /home/long/baidu_aip
 while get filename not matched
 try unzip a.zip -d /home/long/baidu_aip
 
