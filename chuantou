@@ -10,7 +10,7 @@ var=`ifconfig wlan0|grep netmask`
 var=${var#*inet}
 var=${var%netmask*}
 var=${var// /}
-var="./ngrok tcp "$var":22"
+var="./ngrok tcp "$var":22 &"
 pwd
 echo $var
 $var
