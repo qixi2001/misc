@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 cd /home/pi/Downloads
 #./ngrok tcp 192.168.1.10:22
 #cd ..
@@ -10,7 +11,7 @@ var=`ifconfig wlan0|grep netmask`
 var=${var#*inet}
 var=${var%netmask*}
 var=${var// /}
-var="./ngrok tcp "$var":22"
+var="./ngrok tcp "$var":22 &"
 pwd
 echo $var
 $var
