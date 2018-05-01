@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd /home/pi/linux_arm
-./sunny clientid cf0be8ce35f157bb
+./sunny clientid cf0be8ce35f157bb &
 cd ..
